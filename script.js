@@ -1,56 +1,52 @@
-var arr = [['R','G','G','B'],
-['B','O','G','G'],
-['P','O','B','P'],
-['Y','B','Y','O']];
+var array = [["R","G","G","B"], 
+             ["B","O","G","G"], 
+             ["P","O","B","P"], 
+             ["Y","B","Y","O"]];
 
-// let down = document.getElementsByTagName('button')[3];
-// //console.log(down);
-// down.addEventListener('click',myFunction);
+// let findIndex = array[2][2];
+// console.log(findIndex);
+
+// let findIndexPrev = array[2][2]-1;
+// console.log(findIndexPrev);
+
+// let split = array.join(',');
+// console.log(split);
 
 //console.log(arr);
 
-// result.innerText = arr;
+result.innerText = array;
 
-// function myFunction(cell,direction){
+//console.log(array);
 
-//     if (direction === 'Left') {
-//        swap = cell;
-// 	   cell = cell -1;
-// 	   cell-1 = swap;
-// 	   //console.log(arr); 
-//     }
+function myFunction(direction){
+	  // console.log(array.indexOf(cell))
+	  // console.log(cell);
+	  //console.log(array[cell][cell-1]);
+    
+    /*Тук целта е по даден параметър  селл да открием неговият предходен и следващ 
+    елемент след което да ги разменим(параметърът селл и суап от тест.js)*/
+    //let index = array.indexOf(cell);
+    //console.log(index);
 	
-// 	let result = document.getElementById('result');
-// 	for (let i = 0; i < arr.length; i++) {
-// 	    for (let j = 0; j < arr[i].length; j++) {
-// 	      //console.log(arr[i][j]);
-// 	      //document.write(arr[i][j]);
-// 	      result.innerText = arr;
+	    if (direction == 'Left') {
+				var prev = array[1][2-1];		
+				console.log(prev);
+				console.log(array[1][2]);
+				let swap = array[1][2];
+        array[1][2] = prev;
+        prev = swap;
+        ;
 
-// 	    }
-// 	}
-
-
-// }
-
-// myFunction(arr[1][1],Left);
-// console.log(arr);
-
-let array = [1,4,5,6,6,7];
-
-function find(){
-
-for (var i=0; i<array.length; i++) {
-
-var previous=array[i-1];
-var current=array[i];
-var next=array[i+1];
-
-  }
+   result.innerText = array;
+	}
 }
 
-console.log(find(i = 2));
+myFunction('Left');
+//console.log(array);
 
- 
+
+// var arr = ['R','G','G','B'];
+
+// console.log(arr.indexOf(arr[]));
 
 

@@ -39,6 +39,14 @@ down.addEventListener("click", function(){
 
 let result = document.getElementById('result');
 
+
+//С това ще сменяме местата на елементи в зависимост от посоката която е зададена 
+
+var arr = [["R","G","G","B"], 
+             ["B","O","G","G"], 
+             ["P","O","B","P"], 
+             ["Y","B","Y","O"]];
+
 let swap = arr[0][1];
 arr[0][1] = arr[1][1];
 arr[1][1] = swap;
@@ -47,3 +55,26 @@ arr[1][1] = swap;
 
 
 });
+
+
+// //Loop to initialize 2D array elements.
+
+
+
+
+// console.log(find(i = 2));
+
+// let cell = 6;
+
+// let index = array.indexOf(cell,array[0]);
+
+// if (index) {
+//  var prev = array[index-1];
+// }
+// if (index){
+//  var next = array[index+1];
+// }
+
+// console.log(next);
+
+//console.log(index);
