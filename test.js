@@ -50,6 +50,8 @@ var arr = [["R","G","G","B"],
 let swap = arr[0][1];
 arr[0][1] = arr[1][1];
 arr[1][1] = swap;
+
+
 //result.innerHTML = arr;
 
 

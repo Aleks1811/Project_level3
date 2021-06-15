@@ -1,52 +1,56 @@
-var array = [["R","G","G","B"], 
-             ["B","O","G","G"], 
-             ["P","O","B","P"], 
-             ["Y","B","Y","O"]];
+// var arr = [["R","G","G","B"], 
+//            ["B","O","G","G"], 
+//            ["P","O","B","P"], 
+//            ["Y","B","Y","O"]];
+function myFunction(gameboard,cell,direction){
+        
+        // let tryTo = gameboard[1][2];
+        // console.log(tryTo)
+        var myTable = document.createElement('table');
+        myTable.setAttribute("id",'table');
+        
+        document.body.appendChild(myTable);
 
-// let findIndex = array[2][2];
-// console.log(findIndex);
+        let td = document.getElementsByTagName('td');
+        console.log(td);
+        //td.innerText.style = "red";
+        //td.setAttribute('class','row');
+        //td.innerText.style
 
-// let findIndexPrev = array[2][2]-1;
-// console.log(findIndexPrev);
+        for(var i = 0 ; i < gameboard.length ; i++) {
+          var cell= gameboard[i];
+          var y2 = document.createElement('tr');
+          for(var j = 0 ; j < cell.length ; j++) {
+            myTable.appendChild(y2);
+            var th2 = document.createElement('td');
+            var date2 = document.createTextNode(cell[j]);
+            th2.appendChild(date2);
+            y2.appendChild(th2);
+          }
+        }
 
-// let split = array.join(',');
-// console.log(split);
 
-//console.log(arr);
-
-result.innerText = array;
-
-//console.log(array);
-
-function myFunction(direction){
-	  // console.log(array.indexOf(cell))
-	  // console.log(cell);
-	  //console.log(array[cell][cell-1]);
     
-    /*Тук целта е по даден параметър  селл да открием неговият предходен и следващ 
-    елемент след което да ги разменим(параметърът селл и суап от тест.js)*/
-    //let index = array.indexOf(cell);
-    //console.log(index);
-	
-	    if (direction == 'Left') {
-				var prev = array[1][2-1];		
-				console.log(prev);
-				console.log(array[1][2]);
-				let swap = array[1][2];
-        array[1][2] = prev;
-        prev = swap;
-        ;
+        if (direction == 'Left') {
+            // let arr1 = []
+            // let push = arr1.push(cell);
+            console.log(cell);
+            //shift,unshift,pop
+            // let add = gameboard.unshift(cell);
+            // let find = gameboard.indexOf(cell);
 
-   result.innerText = array;
-	}
+            //console.log(find);
+            console.log(gameboard);
+
+        }
+
+         if (direction == 'Right') {
+        
+        }
 }
 
-myFunction('Left');
-//console.log(array);
-
-
-// var arr = ['R','G','G','B'];
-
-// console.log(arr.indexOf(arr[]));
-
+myFunction([["R","G","G","B"], 
+           ["B","O","G","G"], 
+           ["P","O","B","P"], 
+           ["Y","B","Y","O"]],[2,3],'Left');
 
