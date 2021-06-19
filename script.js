@@ -4,7 +4,11 @@
 //            ["Y","B","Y","O"]];
 function myFunction(gameboard,cell,direction){
         
-        // let tryTo = gameboard[1][2];
+
+        // let arr = [];
+        // arr.push(cell);
+
+        // let tryTo = [arr];
         // console.log(tryTo)
         var myTable = document.createElement('table');
         myTable.setAttribute("id",'table');
@@ -12,7 +16,7 @@ function myFunction(gameboard,cell,direction){
         document.body.appendChild(myTable);
 
         let td = document.getElementsByTagName('td');
-        console.log(td);
+        //console.log(td);
         //td.innerText.style = "red";
         //td.setAttribute('class','row');
         //td.innerText.style
@@ -29,18 +33,22 @@ function myFunction(gameboard,cell,direction){
           }
         }
 
+            //console.log(slice);
 
-    
         if (direction == 'Left') {
+            //cell = gameboard[arr];
             // let arr1 = []
             // let push = arr1.push(cell);
+
             console.log(cell);
+            
+            //console.log(arr);
             //shift,unshift,pop
             // let add = gameboard.unshift(cell);
             // let find = gameboard.indexOf(cell);
 
             //console.log(find);
-            console.log(gameboard);
+            //console.log(gameboard);
 
         }
 
@@ -52,5 +60,28 @@ function myFunction(gameboard,cell,direction){
 myFunction([["R","G","G","B"], 
            ["B","O","G","G"], 
            ["P","O","B","P"], 
-           ["Y","B","Y","O"]],[2,3],'Left');
+           ["Y","B","Y","O"]],[1][1],'Left');
 
+//const arrayColumn = (arr, n) => arr.map(x => x[n]);
+
+// function getCol(matrix, col){
+//        var column = [];
+//        for(var i=0; i<matrix.length; i++){
+//           column.push(matrix[i][col]);
+//        }
+//        return column; // return column data..
+//     }
+
+ let arr1 = [["R","G","G","B"], 
+            ["B","O","G","G"], 
+            ["P","O","B","P"], 
+            ["Y","B","Y","O"]];
+
+// console.log(arrayColumn(arr1,0));
+
+
+for(var i = 0; i < arr1.length; i++) {
+  for(var z = 0; z < arr1.length; z++) {
+    console.log(arr1[z][i]);
+  }
+}
