@@ -1,82 +1,64 @@
-// var gameboard = [["R","G","G","B"], 
-//            ["B","O","G","G"], 
-//            ["P","O","B","P"], 
-//            ["Y","B","Y","O"]];
-//function myFunction(cell,direction){
-
-
-
-          function getCell(gameboard, i, z,direction) {
-            // Directions are clockwise
-            for(var i = 0; i < gameboard.length; i++) {
-                for(var z = 0; z < gameboard.length; z++) {
-                }
-            }
-            if (direction == 'Left') {
-              return getCell(gameboard, i,   z-1);
-            }
-          }
-           //cell = [y,x];
-            console.log(getCell([["R","G","G","B"], 
+var gameboard = [["R","G","G","B"], 
            ["B","O","G","G"], 
            ["P","O","B","P"], 
-           ["Y","B","Y","O"]],2,3,'Left'));
+           ["Y","B","Y","O"]];
 
-        // if (direction == 'Left') {
+function myFunction(cell,direction){
 
-            
-        //   for(var i = 0; i < gameboard.length; i++) {
-        //         for(var z = 0; z < gameboard.length; z++) {
-        //           //console.log(arr1[z][i]);
-        //           cell = gameboard[i][z];
+                // let i = cell[0];
+                // let j = cell[1];
+                //cell = gameboard[i][j];
+               //element = [];
+               //console.log(cell);
+              for(let i = 0; i < gameboard.length; i++) {
+                for(let j = 0; j < gameboard.length; j++) {
+                      
+                     i = cell[0];
+                     j = cell[1];
+                     //console.log(cell);
+                      //element.push(i,j);
+                      
+                      //cell = gameboard[i][j];
+                      // cell =[];
+                      // cell.push(i,j);
+                      //console.log(cell);
+                     // prev = gameboard[i][z-1];
+                     // next = gameboard[i][z+1];
+                     //console.log(gameboard[i][z]);
+                     //console.log(cell);
 
-        //            //console.log(cell);
-        //           //console.log(cell);
-        //         }
-        //       }
+                }
+              }
 
-        // }
-
-        //  if (direction == 'Right') {
-        
-        // }
-//}
-
-//myFunction([2,3],'Left');
-
-
-
-//const arrayColumn = (arr, n) => arr.map(x => x[n]);
-
-// function getCol(matrix, col){
-//        var column = [];
-//        for(var i=0; i<matrix.length; i++){
-//           column.push(matrix[i][col]);
-//        }
-//        return column; // return column data..
-//     }
-
-//  let arr1 = [["R","G","G","B"], 
-//             ["B","O","G","G"], 
-//             ["P","O","B","P"], 
-//             ["Y","B","Y","O"]];
-
-// // console.log(arrayColumn(arr1,0));
+              //[i,j];
 
 
-// for(var i = 0; i < arr1.length; i++) {
-//   for(var z = 0; z < arr1.length; z++) {
-//     console.log(arr1[z][i]);
-//   }
+              if (direction == 'Left') {
+
+                // let swap = cell;
+                // cell = prev
+                // prev = swap;
+                // /console.log(cell);
+
+              }
+
+}
+myFunction([1,1],'Left');
+//console.log(gameboard);
+
+// function getCordinates(gameboard,cell){
+//           for(var i = 0; i < gameboard.length; i++) {
+//                 for(var j = 0; j < gameboard.length; j++) {
+//                       arr = [];
+//                       arr.push(i,j);
+//                      //arr = gameboard[i][j];
+                     
+//                 }
+//               }
+          
+// console.log(arr); 
 // }
-
-// let a = [["R","G","G","B"], 
-//             ["B","O","G","G"], 
-//             ["P","O","B","P"], 
-//             ["Y","B","Y","O"]];
-
-// [a[0], a[1]] = [a[1], a[0]]
-
-// console.log(a);
-
-
+// getCordinates([["R","G","G","B"], 
+//            ["B","O","G","G"], 
+//            ["P","O","B","P"], 
+//            ["Y","B","Y","O"]],2,3);
