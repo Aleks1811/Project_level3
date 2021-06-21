@@ -3,6 +3,7 @@ var gameboard = [["R","G","G","B"],
            ["P","O","B","P"], 
            ["Y","B","Y","O"]];
 
+console.log('Hello');
 function myFunction(cell,direction){
 
                 // let i = cell[0];
