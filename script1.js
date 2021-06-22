@@ -18,6 +18,30 @@ function myFunction(cell,direction){
                     var cell = document.createElement('td');
                     cell.appendChild(document.createTextNode(cellData));
                     row.appendChild(cell);
+                    if (cell.innerText == 'R') {
+                      cell.style.color = "red";
+
+                    }
+                    if (cell.innerText == 'B') {
+                      cell.style.color = "blue";
+
+                    }
+                    if (cell.innerText == 'G') {
+                      cell.style.color = "green";
+
+                    }
+                    if (cell.innerText == 'Y') {
+                      cell.style.color = "#C1BF0C";
+
+                    }
+                    if (cell.innerText == 'O') {
+                      cell.style.color = "orange";
+
+                    }
+                    if (cell.innerText == 'P') {
+                      cell.style.color = "purple";
+
+                    }
                   });
 
                   tableBody.appendChild(row);
@@ -27,6 +51,8 @@ function myFunction(cell,direction){
                 document.body.appendChild(table);
                 $('table').attr('id','tableDesigne');
               }
+
+
 
 createTable(gameboard);
                 
@@ -50,12 +76,12 @@ createTable(gameboard);
                //console.log(cell);   
 
                //console.log(gameboard);
-              for(let i = 0; i < gameboard.length; i++) {
-                for(let j = 0; j < gameboard.length; j++) {
+              // for(let i = 0; i < gameboard.length; i++) {
+              //   for(let j = 0; j < gameboard.length; j++) {
                    
 
-                }
-              }
+              //   }
+              // }
 
               //[i,j];
               var i = cell[0];
@@ -88,6 +114,8 @@ createTable(gameboard);
                  //console.log(gameboard);
               }
 
+            let rightButton = document.getElementById('right');
+            rightButton.addEventListener('click',function (){
               if (direction == 'Right') {
                 //let string = gameboard.toString();
                 let right = gameboard[i][j+1];
@@ -100,6 +128,9 @@ createTable(gameboard);
 
 
               }
+               
+            });
+
               if (direction == 'Down') {
                 let down = gameboard[i+1][j];
                 let swap = element;
@@ -111,7 +142,7 @@ createTable(gameboard);
               }
 
 }
-myFunction([2,2],'Right');
+myFunction([2,1],'Right');
 //console.log(gameboard);
 
 // function getCordinates(gameboard,cell){
@@ -130,18 +161,3 @@ myFunction([2,2],'Right');
 //            ["B","O","G","G"], 
 //            ["P","O","B","P"], 
 //            ["Y","B","Y","O"]],2,3);
-
-
-
-var arr = [["R","G","G","B"], 
-             ["B","O","G","G"], 
-             ["P","O","B","P"], 
-             ["Y","B","Y","O"]];
-
-console.log(arr);
-
-let swap = arr[0][1];
-arr[0][1] = arr[1][1];
-arr[1][1] = swap;
-
-console.log(arr);
