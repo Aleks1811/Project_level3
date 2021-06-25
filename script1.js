@@ -5,12 +5,13 @@ var gameboard = [["R","G","G","B"],
 
 console.log('Hello');
 function myFunction(cell,direction){
+  //console.log(gameboard);
               function createTable(tableData) {
                 var table = document.createElement('table');
                 var tableBody = document.createElement('tbody');
                 table.style.border = "3px solid black";
                 
-
+                
                 tableData.forEach(function(rowData) {
                   var row = document.createElement('tr');
 
@@ -56,51 +57,26 @@ function myFunction(cell,direction){
 
 createTable(gameboard);
                 
-                //console.log(element);
-                //let prev = gameboard[i][j-1];
-                //console.log(prev);
-                //cell = gameboard[i][j];
-               //element = [];
-                  
-
-               //console.log(cell);
-                //element.push(i,j);
-                
-                //cell = gameboard[i][j];
-                // cell =[];
-                // cell.push(i,j);
-                //console.log(cell);
-               // prev = gameboard[i][z-1];
-               // next = gameboard[i][z+1];
-               //console.log(gameboard[i][z]);
-               //console.log(cell);   
-
-               //console.log(gameboard);
-              // for(let i = 0; i < gameboard.length; i++) {
-              //   for(let j = 0; j < gameboard.length; j++) {
-                   
-
-              //   }
-              // }
-
+               
               //[i,j];
               var i = cell[0];
               var j = cell[1];
 
               //gameboard = gameboard.toString();
-
-              var element = gameboard[i][j];
-              console.log(gameboard);
-
+              //!ВАЖНО
+              //var element = gameboard[i][j];
+              //console.log(gameboard);
+      if ((cell.length = 2) && (i < gameboard.length) && (j < gameboard[0].length)) {
               if (direction == 'Left') {
                 //let string = gameboard.toString();
-                let prev = gameboard[i][j-1];
-                let swap = element;
-                 element = prev;
-                 prev = swap;
-                console.log(swap);
-                console.log(element);
-                //console.log(gameboard);
+                //let prev = gameboard[i][j-1];
+                let swap = gameboard[i][j];
+                gameboard[i][j] = gameboard[i][j-1] ;
+                 gameboard[i][j-1] = swap;
+                // console.log(swap);
+                // console.log(gameboard[i][j]);
+                // console.log(gameboard);
+                // createTable(gameboard);
 
 
               }
@@ -115,17 +91,25 @@ createTable(gameboard);
               }
 
             let rightButton = document.getElementById('right');
-            rightButton.addEventListener('click',function (){
+            rightButton.addEventListener('click',function(){
+              //console.log(direction)
               if (direction == 'Right') {
+                //console.log(element, 'el')
+                // console.log(right)
+                // console.log(swap)
                 //let string = gameboard.toString();
-                let right = gameboard[i][j+1];
-                let swap = element;
-                  element = right;
-                  right = swap;
-                console.log(swap);
-                console.log(element);
+                // console.log(gameboard);
+                //let right = gameboard[i][j+1];
+                let swap = gameboard[i][j];
+                // console.log(right, 'right')
+                // console.log(swap, 'swap')
+                  gameboard[i][j] = gameboard[i][j+1] ;
+                  gameboard[i][j+1] = swap;
+                  //let newGameboard = gameboard;
+                console.log(gameboard[i][j+1], 'right');
+                console.log(gameboard[i][j], 'el');
                 console.log(gameboard);
-
+                //createTable(newGameboard);
 
               }
                
@@ -138,26 +122,16 @@ createTable(gameboard);
                  down = swap;
                  console.log(swap);
                  console.log(element);
-                 //console.log(gameboard);
+                 console.log(gameboard);
               }
-
+      }else{
+        alert('The information is not given right!');
+      }
 }
 myFunction([2,1],'Right');
-//console.log(gameboard);
-
-// function getCordinates(gameboard,cell){
-//           for(var i = 0; i < gameboard.length; i++) {
-//                 for(var j = 0; j < gameboard.length; j++) {
-//                       arr = [];
-//                       arr.push(i,j);
-//                      //arr = gameboard[i][j];
-                     
-//                 }
-//               }
-          
-// console.log(arr); 
-// }
-// getCordinates([["R","G","G","B"], 
-//            ["B","O","G","G"], 
-//            ["P","O","B","P"], 
-//            ["Y","B","Y","O"]],2,3);
+console.log(gameboard);
+let arr =  
+           [["R","G","G","B"], 
+           ["B","O","G","G"], 
+           ["P","O","B","P"], 
+           ["Y","B","Y","O"]];
