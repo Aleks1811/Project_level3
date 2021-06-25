@@ -5,7 +5,7 @@ var gameboard = [["R","G","G","B"],
 
 console.log('Hello');
 function myFunction(cell,direction){
-  //console.log(gameboard);
+  console.log(gameboard);
               function createTable(tableData) {
                 var table = document.createElement('table');
                 var tableBody = document.createElement('tbody');
@@ -67,29 +67,38 @@ createTable(gameboard);
               //var element = gameboard[i][j];
               //console.log(gameboard);
       if ((cell.length = 2) && (i < gameboard.length) && (j < gameboard[0].length)) {
-              if (direction == 'Left') {
+              let leftButton = document.getElementById('left')
+              leftButton.addEventListener('click',function(){
+                if (direction == 'Left') {
                 //let string = gameboard.toString();
                 //let prev = gameboard[i][j-1];
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j-1] ;
-                 gameboard[i][j-1] = swap;
+                gameboard[i][j-1] = swap;
                 // console.log(swap);
                 // console.log(gameboard[i][j]);
                 // console.log(gameboard);
-                // createTable(gameboard);
+                //createTable(gameboard);
 
 
               }
-              if (direction == 'Up') {
-                let up = gameboard[i-1][j];
-                let swap = element;
-                 element = up;
-                 up = swap;
-                 console.log(swap);
-                 console.log(element);
-                 //console.log(gameboard);
-              }
 
+              });
+              
+              let upButton = document.getElementById('up');
+              upButton.addEventListener('click',function(){
+               if (direction == 'Up') {
+                //let up = gameboard[i-1][j];
+                let swap = gameboard[i][j];
+                 gameboard[i][j] = gameboard[i-1][j];
+                 gameboard[i-1][j] = swap;
+                 // console.log(swap);
+                 // console.log(gameboard[i][j]);
+                 // console.log(gameboard);
+              }
+ 
+            });
+              
             let rightButton = document.getElementById('right');
             rightButton.addEventListener('click',function(){
               //console.log(direction)
@@ -106,30 +115,34 @@ createTable(gameboard);
                   gameboard[i][j] = gameboard[i][j+1] ;
                   gameboard[i][j+1] = swap;
                   //let newGameboard = gameboard;
-                console.log(gameboard[i][j+1], 'right');
-                console.log(gameboard[i][j], 'el');
-                console.log(gameboard);
+                // console.log(gameboard[i][j+1], 'right');
+                // console.log(gameboard[i][j], 'el');
+                // console.log(gameboard);
                 //createTable(newGameboard);
 
               }
                
             });
-
+              
+            let downButton = document.getElementById('down');
+            downButton.addEventListener('click',function(){
               if (direction == 'Down') {
-                let down = gameboard[i+1][j];
-                let swap = element;
-                 element = down;
-                 down = swap;
+                //let down = gameboard[i+1][j];
+                let swap = gameboard[i][j];
+                 gameboard[i][j] = gameboard[i+1][j];
+                 gameboard[i+1][j] = swap;
                  console.log(swap);
-                 console.log(element);
+                 console.log(gameboard[i][j]);
                  console.log(gameboard);
               }
+            }); 
+              
       }else{
         alert('The information is not given right!');
       }
 }
-myFunction([2,1],'Right');
-console.log(gameboard);
+myFunction([2,1],'Down');
+//console.log(gameboard);
 let arr =  
            [["R","G","G","B"], 
            ["B","O","G","G"], 
