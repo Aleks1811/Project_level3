@@ -62,25 +62,39 @@ createTable(gameboard);
               var i = cell[0];
               var j = cell[1];
 
-              //gameboard = gameboard.toString();
-              //!ВАЖНО
               //var element = gameboard[i][j];
               //console.log(gameboard);
       if ((cell.length = 2) && (i < gameboard.length) && (j < gameboard[0].length)) {
+
+         function consecutiveEl(array){
+          var maxSeq = 0;
+
+          for (var k = 0; k < array.length; k++) {
+              var counter = 1;
+              for(var z = k+2; z < array.length; z++){
+                  if(array[k] === array[z]){
+                      counter+=1;
+                  }
+                  else{
+                      break;
+                  }
+                  if(counter > maxSeq){
+                      maxSeq = counter;
+                  }
+
+                 console.log(maxSeq);
+                 console.log(counter);
+              }
+          }
+      }
+
               let leftButton = document.getElementById('left')
               leftButton.addEventListener('click',function(){
                 if (direction == 'Left') {
-                //let string = gameboard.toString();
                 //let prev = gameboard[i][j-1];
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j-1] ;
                 gameboard[i][j-1] = swap;
-                // console.log(swap);
-                // console.log(gameboard[i][j]);
-                // console.log(gameboard);
-                //createTable(gameboard);
-
-
               }
 
               });
@@ -92,9 +106,6 @@ createTable(gameboard);
                 let swap = gameboard[i][j];
                  gameboard[i][j] = gameboard[i-1][j];
                  gameboard[i-1][j] = swap;
-                 // console.log(swap);
-                 // console.log(gameboard[i][j]);
-                 // console.log(gameboard);
               }
  
             });
@@ -103,23 +114,10 @@ createTable(gameboard);
             rightButton.addEventListener('click',function(){
               //console.log(direction)
               if (direction == 'Right') {
-                //console.log(element, 'el')
-                // console.log(right)
-                // console.log(swap)
-                //let string = gameboard.toString();
-                // console.log(gameboard);
                 //let right = gameboard[i][j+1];
                 let swap = gameboard[i][j];
-                // console.log(right, 'right')
-                // console.log(swap, 'swap')
-                  gameboard[i][j] = gameboard[i][j+1] ;
-                  gameboard[i][j+1] = swap;
-                  //let newGameboard = gameboard;
-                // console.log(gameboard[i][j+1], 'right');
-                // console.log(gameboard[i][j], 'el');
-                // console.log(gameboard);
-                //createTable(newGameboard);
-
+                gameboard[i][j] = gameboard[i][j+1] ;
+                gameboard[i][j+1] = swap;
               }
                
             });
@@ -134,17 +132,17 @@ createTable(gameboard);
                  console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
+                 console.log(consecutiveEl(gameboard));
               }
-            }); 
-              
+            });
+
+          //console.log(cntConsecutiveElements(gameboard));
+
+          //console.log(gameboard.reduce((count, row) => count + row.length, 0));
+          //console.log(count);
       }else{
         alert('The information is not given right!');
       }
 }
-myFunction([2,1],'Down');
+myFunction([0,1],'Down');
 //console.log(gameboard);
-let arr =  
-           [["R","G","G","B"], 
-           ["B","O","G","G"], 
-           ["P","O","B","P"], 
-           ["Y","B","Y","O"]];
