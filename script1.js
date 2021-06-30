@@ -146,3 +146,39 @@ createTable(gameboard);
 }
 myFunction([0,1],'Down');
 //console.log(gameboard);
+
+function countCon(ar,n)
+    {
+        let cnt = 0;
+       
+        for (let i = 0; i < n - 1; i++)
+        {
+       
+            // If consecutive elements are same
+            if (ar[i] == ar[i + 1])
+                cnt++;
+        }
+        return cnt;
+    }
+
+let arr = [["R","G","G","B"], 
+           ["B","O","G","G"], 
+           ["P","O","B","P"], 
+           ["Y","B","Y","O"]];
+
+let newArr = [];
+
+ for(var i = 0; i < arr.length; i++)
+{
+    newArr = newArr.concat(arr[i]);
+}
+
+
+
+let n = newArr.length;
+
+console.log(newArr);
+
+
+
+console.log(countCon(newArr,n));
