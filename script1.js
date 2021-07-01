@@ -66,28 +66,6 @@ createTable(gameboard);
               //console.log(gameboard);
       if ((cell.length = 2) && (i < gameboard.length) && (j < gameboard[0].length)) {
 
-         function consecutiveEl(array){
-          var maxSeq = 0;
-
-          for (var k = 0; k < array.length; k++) {
-              var counter = 1;
-              for(var z = k+2; z < array.length; z++){
-                  if(array[k] === array[z]){
-                      counter+=1;
-                  }
-                  else{
-                      break;
-                  }
-                  if(counter > maxSeq){
-                      maxSeq = counter;
-                  }
-
-                 console.log(maxSeq);
-                 console.log(counter);
-              }
-          }
-      }
-
               let leftButton = document.getElementById('left')
               leftButton.addEventListener('click',function(){
                 if (direction == 'Left') {
@@ -180,5 +158,28 @@ let n = newArr.length;
 console.log(newArr);
 
 
-
 console.log(countCon(newArr,n));
+
+
+function consecutiveEl(array){
+          var maxSeq = 0;
+
+          for (var k = 0; k < array.length; k++) {
+              var counter = 1;
+              for(var z = k+2; z < array.length; z++){
+                  if(array[k] === array[z]){
+                      counter+=1;
+                  }
+                  else{
+                      break;
+                  }
+                  if(counter > maxSeq){
+                      maxSeq = counter;
+                  }
+
+              }
+          }
+  console.log(maxSeq);
+}
+
+consecutiveEl(newArr);
