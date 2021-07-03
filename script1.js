@@ -73,6 +73,8 @@ createTable(gameboard);
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j-1] ;
                 gameboard[i][j-1] = swap;
+                 consecutiveIdEl();
+
               }
 
               });
@@ -110,9 +112,32 @@ createTable(gameboard);
                  console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
-                 console.log(consecutiveEl(gameboard));
+                 //console.log(consecutiveEl(gameboard));
+                 consecutiveIdEl();
               }
             });
+
+        function consecutiveIdEl(){
+            for (var y=0; y<gameboard.length; y++){
+              for (var x=0; x< gameboard[y].length; x++){
+                  var matches = 0,
+                      testing = gameboard[y][x];
+                      //console.log(cell);
+                  // test left
+                  if (x>0 && gameboard[y][x-1] === testing) matches++;
+                  // test right
+                  if ((x<gameboard[y].length-1) && gameboard[y][x+1] === testing) matches++; 
+                  // test above
+                  if (y>0 && gameboard[y-1][x] === testing) matches++; 
+                  // test below
+                  if ((y<gameboard.length-1) && gameboard[y+1][x] === testing) matches++; 
+
+                  if (matches>=3){
+                     console.log('True');
+                  }
+              }
+        }
+}
 
           //console.log(cntConsecutiveElements(gameboard));
 
@@ -125,61 +150,64 @@ createTable(gameboard);
 myFunction([0,1],'Down');
 //console.log(gameboard);
 
-function countCon(ar,n)
-    {
-        let cnt = 0;
+// function countCon(ar,n)
+//     {
+//         let cnt = 0;
        
-        for (let i = 0; i < n - 1; i++)
-        {
+//         for (let i = 0; i < n - 1; i++)
+//         {
        
-            // If consecutive elements are same
-            if (ar[i] == ar[i + 1])
-                cnt++;
-        }
-        return cnt;
-    }
+//             // If consecutive elements are same
+//             if (ar[i] == ar[i + 1])
+//                 cnt++;
+//         }
+//         return cnt;
+//     }
 
-let arr = [["R","G","G","B"], 
-           ["B","O","G","G"], 
-           ["P","O","B","P"], 
-           ["Y","B","Y","O"]];
+// let arr = [["R","O","G","B"], 
+//            ["B","G","G","G"], 
+//            ["P","O","B","P"], 
+//            ["Y","B","Y","O"]];
 
-let newArr = [];
+// let newArr = [];
 
- for(var i = 0; i < arr.length; i++)
-{
-    newArr = newArr.concat(arr[i]);
-}
-
-
-
-let n = newArr.length;
-
-console.log(newArr);
+//  for(var i = 0; i < arr.length; i++)
+// {
+//     newArr = newArr.concat(arr[i]);
+// }
 
 
-console.log(countCon(newArr,n));
+
+// let n = newArr.length;
+
+// console.log(newArr);
 
 
-function consecutiveEl(array){
-          var maxSeq = 0;
+// console.log(countCon(newArr,n));
 
-          for (var k = 0; k < array.length; k++) {
-              var counter = 1;
-              for(var z = k+2; z < array.length; z++){
-                  if(array[k] === array[z]){
-                      counter+=1;
-                  }
-                  else{
-                      break;
-                  }
-                  if(counter > maxSeq){
-                      maxSeq = counter;
-                  }
 
-              }
-          }
-  console.log(maxSeq);
-}
+// function consecutiveEl(array){
+//           var maxSeq = 0;
 
-consecutiveEl(newArr);
+//           for (var k = 0; k < array.length; k++) {
+//               var counter = 1;
+//               for(var z = k+2; z < array.length; z++){
+//                   if(array[k] === array[z]){
+//                       counter+=1;
+//                   }
+//                   else{
+//                       break;
+//                   }
+//                   if(counter > maxSeq){
+//                       maxSeq = counter;
+//                   }
+
+//               }
+//           }
+//   console.log(maxSeq);
+// }
+
+// consecutiveEl(newArr);
+
+
+
