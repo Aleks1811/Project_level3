@@ -1,7 +1,8 @@
-var gameboard = [["R","G","G","B"], 
-           ["B","O","G","G"], 
-           ["P","O","B","P"], 
-           ["Y","B","Y","O"]];
+var gameboard = [["R","G","G","B"],
+                ["B","O","G","G"],
+                ["P","O","B","P"],
+                ["Y","B","Y","O"]];
+
 
 console.log('Hello');
 function myFunction(cell,direction){
@@ -49,7 +50,7 @@ function myFunction(cell,direction){
                 });
 
                 table.appendChild(tableBody);
-                document.body.appendChild(table);
+                document.querySelector('.table').appendChild(table);
                 $('table').attr('id','tableDesigne');
               }
 
@@ -73,7 +74,11 @@ createTable(gameboard);
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j-1] ;
                 gameboard[i][j-1] = swap;
-                 consecutiveIdEl();
+                 console.log(swap);
+                 console.log(gameboard[i][j]);
+                 console.log(gameboard);
+                 //console.log(createTable(gameboard));
+                 console.log(consecutiveIdEl());
 
               }
 
@@ -86,6 +91,11 @@ createTable(gameboard);
                 let swap = gameboard[i][j];
                  gameboard[i][j] = gameboard[i-1][j];
                  gameboard[i-1][j] = swap;
+                 console.log(swap);
+                 console.log(gameboard[i][j]);
+                 console.log(gameboard);
+                 //console.log(createTable(gameboard));
+                 console.log(consecutiveIdEl());
               }
  
             });
@@ -98,6 +108,11 @@ createTable(gameboard);
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j+1] ;
                 gameboard[i][j+1] = swap;
+                console.log(swap);
+                 console.log(gameboard[i][j]);
+                 console.log(gameboard);
+                 //console.log(createTable(gameboard));
+                 console.log(consecutiveIdEl());
               }
                
             });
@@ -112,7 +127,7 @@ createTable(gameboard);
                  console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
-                 //console.log(consecutiveEl(gameboard));
+                 console.log(createTable(gameboard));
                  consecutiveIdEl();
               }
             });
@@ -120,29 +135,54 @@ createTable(gameboard);
         function consecutiveIdEl(){
             for (var y=0; y<gameboard.length; y++){
               for (var x=0; x< gameboard[y].length; x++){
-                  var matches = 0,
+                  var matchesRows = 0,
+                  matchesColumns = 0,
                       testing = gameboard[y][x];
                       //console.log(cell);
                   // test left
-                  if (x>0 && gameboard[y][x-1] === testing) matches++;
+                  if (gameboard[y][x-1] === testing) {matchesRows++};
                   // test right
-                  if ((x<gameboard[y].length-1) && gameboard[y][x+1] === testing) matches++; 
+                  if (gameboard[y][x+1] === testing) {matchesRows++}; 
                   // test above
-                  if (y>0 && gameboard[y-1][x] === testing) matches++; 
+                  if (y>0 && gameboard[y-1][x] === testing) {matchesColumns++}; 
                   // test below
-                  if ((y<gameboard.length-1) && gameboard[y+1][x] === testing) matches++; 
+                  if ((y<gameboard.length-1) && gameboard[y+1][x] === testing) {matchesColumns++}; 
 
-                  if (matches>=3){
+                  
+                  
+                  if (matchesRows>=2){
+                      //return true;
                      console.log('True');
+                     console.log(matchesRows);
+                     // let match = $(cell.text = gameboard[y][x]);
+                     // console.log(match);
+
+                     // match.css('background - color: green');
+
+                     let result = document.getElementById('result');
+            result.innerText = 'There are 3 or more same consecutive colors at a row or at a column';
+            result.style.color = 'green';
+
+                  }
+
+                  if (matchesColumns>=2){
+                      //return true;
+                     console.log('True');
+                     console.log(matchesColumns);
+                     // let match = $(cell.text = gameboard[y][x]);
+                     // console.log(match);
+
+                     // match.css('background - color: green');
+
+                     let result = document.getElementById('result');
+            result.innerText = 'There are 3 or more same consecutive colors at a row or at a column';
+            result.style.color = 'green';
                   }
               }
+              
         }
 }
 
-          //console.log(cntConsecutiveElements(gameboard));
-
-          //console.log(gameboard.reduce((count, row) => count + row.length, 0));
-          //console.log(count);
       }else{
         alert('The information is not given right!');
       }
