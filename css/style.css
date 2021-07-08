@@ -2,7 +2,7 @@
 	border: 3px solid green;
 	border-collapse: collapse;
 	width: 100px;
-	height: 325px;
+	height: 625px;
   padding: 10px;
   border-left: red;
   
@@ -23,8 +23,8 @@ table, td, th {
 }
 
 #result {
-    -webkit-animation: cssAnimation 8s forwards; 
-    animation: cssAnimation 8s forwards;
+    -webkit-animation: cssAnimation 15s forwards; 
+    animation: cssAnimation 15s forwards;
 }
 @keyframes cssAnimation {
     0%   {opacity: 1;}
@@ -35,4 +35,18 @@ table, td, th {
     0%   {opacity: 1;}
     90%  {opacity: 1;}
     100% {opacity: 0;}
+}
+
+#heading{
+   text-align:center;
+   color: red;
+}
+#buttons{
+  margin: 0;
+  padding-top: 100px;
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

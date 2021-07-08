@@ -75,3 +75,65 @@ addTable(
 
         // var y = document.createElement('tr');
         // myTable.appendChild(y);
+
+
+        //console.log(gameboard);
+
+// function countCon(ar,n)
+//     {
+//         let cnt = 0;
+       
+//         for (let i = 0; i < n - 1; i++)
+//         {
+       
+//             // If consecutive elements are same
+//             if (ar[i] == ar[i + 1])
+//                 cnt++;
+//         }
+//         return cnt;
+//     }
+
+// let arr = [["R","O","G","B"], 
+//            ["B","G","G","G"], 
+//            ["P","O","B","P"], 
+//            ["Y","B","Y","O"]];
+
+// let newArr = [];
+
+//  for(var i = 0; i < arr.length; i++)
+// {
+//     newArr = newArr.concat(arr[i]);
+// }
+
+
+
+// let n = newArr.length;
+
+// console.log(newArr);
+
+
+// console.log(countCon(newArr,n));
+
+
+// function consecutiveEl(array){
+//           var maxSeq = 0;
+
+//           for (var k = 0; k < array.length; k++) {
+//               var counter = 1;
+//               for(var z = k+2; z < array.length; z++){
+//                   if(array[k] === array[z]){
+//                       counter+=1;
+//                   }
+//                   else{
+//                       break;
+//                   }
+//                   if(counter > maxSeq){
+//                       maxSeq = counter;
+//                   }
+
+//               }
+//           }
+//   console.log(maxSeq);
+// }
+
+// consecutiveEl(newArr);

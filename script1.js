@@ -1,11 +1,10 @@
-var gameboard = [["R","G","G","B"],
-                ["B","O","G","G"],
-                ["P","O","B","P"],
+var gameboard =[["R","G","G","B"], 
+                ["B","O","G","G"], 
+                ["P","O","B","P"], 
                 ["Y","B","Y","O"]];
 
-
 console.log('Hello');
-function myFunction(cell,direction){
+function myFunction(cell){
   console.log(gameboard);
               function createTable(tableData) {
                 var table = document.createElement('table');
@@ -54,11 +53,8 @@ function myFunction(cell,direction){
                 $('table').attr('id','tableDesigne');
               }
 
-
-
 createTable(gameboard);
-                
-               
+                 
               //[i,j];
               var i = cell[0];
               var j = cell[1];
@@ -69,7 +65,7 @@ createTable(gameboard);
 
               let leftButton = document.getElementById('left')
               leftButton.addEventListener('click',function(){
-                if (direction == 'Left') {
+                //if (direction == 'Left') {
                 //let prev = gameboard[i][j-1];
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j-1] ;
@@ -77,16 +73,16 @@ createTable(gameboard);
                  console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
-                 //console.log(createTable(gameboard));
+                 createTable(gameboard);
                  console.log(consecutiveIdEl());
 
-              }
+              //}
 
               });
               
               let upButton = document.getElementById('up');
               upButton.addEventListener('click',function(){
-               if (direction == 'Up') {
+               //if (direction == 'Up') {
                 //let up = gameboard[i-1][j];
                 let swap = gameboard[i][j];
                  gameboard[i][j] = gameboard[i-1][j];
@@ -94,16 +90,16 @@ createTable(gameboard);
                  console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
-                 //console.log(createTable(gameboard));
+                 createTable(gameboard);
                  console.log(consecutiveIdEl());
-              }
+              //}
  
             });
               
             let rightButton = document.getElementById('right');
             rightButton.addEventListener('click',function(){
               //console.log(direction)
-              if (direction == 'Right') {
+              //if (direction == 'Right') {
                 //let right = gameboard[i][j+1];
                 let swap = gameboard[i][j];
                 gameboard[i][j] = gameboard[i][j+1] ;
@@ -111,15 +107,15 @@ createTable(gameboard);
                 console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
-                 //console.log(createTable(gameboard));
+                 createTable(gameboard);
                  console.log(consecutiveIdEl());
-              }
+              //}
                
             });
               
             let downButton = document.getElementById('down');
             downButton.addEventListener('click',function(){
-              if (direction == 'Down') {
+              //if (direction == 'Down') {
                 //let down = gameboard[i+1][j];
                 let swap = gameboard[i][j];
                  gameboard[i][j] = gameboard[i+1][j];
@@ -127,9 +123,9 @@ createTable(gameboard);
                  console.log(swap);
                  console.log(gameboard[i][j]);
                  console.log(gameboard);
-                 console.log(createTable(gameboard));
+                 createTable(gameboard);
                  consecutiveIdEl();
-              }
+              //}
             });
 
         function consecutiveIdEl(){
@@ -154,11 +150,6 @@ createTable(gameboard);
                       //return true;
                      console.log('True');
                      console.log(matchesRows);
-                     // let match = $(cell.text = gameboard[y][x]);
-                     // console.log(match);
-
-                     // match.css('background - color: green');
-
                      let result = document.getElementById('result');
             result.innerText = 'There are 3 or more same consecutive colors at a row or at a column';
             result.style.color = 'green';
@@ -169,11 +160,6 @@ createTable(gameboard);
                       //return true;
                      console.log('True');
                      console.log(matchesColumns);
-                     // let match = $(cell.text = gameboard[y][x]);
-                     // console.log(match);
-
-                     // match.css('background - color: green');
-
                      let result = document.getElementById('result');
             result.innerText = 'There are 3 or more same consecutive colors at a row or at a column';
             result.style.color = 'green';
@@ -187,67 +173,4 @@ createTable(gameboard);
         alert('The information is not given right!');
       }
 }
-myFunction([0,1],'Down');
-//console.log(gameboard);
-
-// function countCon(ar,n)
-//     {
-//         let cnt = 0;
-       
-//         for (let i = 0; i < n - 1; i++)
-//         {
-       
-//             // If consecutive elements are same
-//             if (ar[i] == ar[i + 1])
-//                 cnt++;
-//         }
-//         return cnt;
-//     }
-
-// let arr = [["R","O","G","B"], 
-//            ["B","G","G","G"], 
-//            ["P","O","B","P"], 
-//            ["Y","B","Y","O"]];
-
-// let newArr = [];
-
-//  for(var i = 0; i < arr.length; i++)
-// {
-//     newArr = newArr.concat(arr[i]);
-// }
-
-
-
-// let n = newArr.length;
-
-// console.log(newArr);
-
-
-// console.log(countCon(newArr,n));
-
-
-// function consecutiveEl(array){
-//           var maxSeq = 0;
-
-//           for (var k = 0; k < array.length; k++) {
-//               var counter = 1;
-//               for(var z = k+2; z < array.length; z++){
-//                   if(array[k] === array[z]){
-//                       counter+=1;
-//                   }
-//                   else{
-//                       break;
-//                   }
-//                   if(counter > maxSeq){
-//                       maxSeq = counter;
-//                   }
-
-//               }
-//           }
-//   console.log(maxSeq);
-// }
-
-// consecutiveEl(newArr);
-
-
-
+myFunction([0,1]);
