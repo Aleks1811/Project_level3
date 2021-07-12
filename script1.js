@@ -76,6 +76,9 @@ createTable(gameboard);
                  createTable(gameboard);
                  console.log(consecutiveIdEl());
 
+                  let newGame = document.getElementById('new_game')
+                 newGame.style.display = 'block';
+
               //}
 
               });
@@ -92,6 +95,9 @@ createTable(gameboard);
                  console.log(gameboard);
                  createTable(gameboard);
                  console.log(consecutiveIdEl());
+
+                  let newGame = document.getElementById('new_game')
+                 newGame.style.display = 'block';
               //}
  
             });
@@ -109,6 +115,9 @@ createTable(gameboard);
                  console.log(gameboard);
                  createTable(gameboard);
                  console.log(consecutiveIdEl());
+
+                 let newGame = document.getElementById('new_game')
+                 newGame.style.display = 'block';
               //}
                
             });
@@ -125,6 +134,9 @@ createTable(gameboard);
                  console.log(gameboard);
                  createTable(gameboard);
                  consecutiveIdEl();
+
+                 let newGame = document.getElementById('new_game')
+                 newGame.style.display = 'block';
               //}
             });
 
@@ -151,7 +163,7 @@ createTable(gameboard);
                      console.log('True');
                      console.log(matchesRows);
                      let result = document.getElementById('result');
-            result.innerText = 'There are 3 or more same consecutive colors at a row or at a column';
+            result.innerText = 'There are 3 or more same consecutive colors at a row or at a column!';
             result.style.color = 'green';
 
                   }
