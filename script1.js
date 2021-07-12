@@ -1,6 +1,6 @@
-var gameboard =[["R","G","G","B"], 
-                ["B","O","G","G"], 
-                ["P","O","B","P"], 
+var gameboard =[["R","G","G","B"],
+                ["B","O","G","G"],
+                ["P","O","B","P"],
                 ["Y","B","Y","O"]];
 
 console.log('Hello');
@@ -173,7 +173,7 @@ createTable(gameboard);
                      console.log('True');
                      console.log(matchesColumns);
                      let result = document.getElementById('result');
-            result.innerText = 'There are 3 or more same consecutive colors at a row or at a column';
+            result.innerText = 'There are 3 or more same consecutive colors at a row or at a column!';
             result.style.color = 'green';
                   }
               }
